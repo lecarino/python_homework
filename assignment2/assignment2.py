@@ -80,7 +80,7 @@ def employee_find_2(employee_id):
    matches = list(filter(lambda row : int(row[employee_id_column]) == employee_id , employees["rows"]))
    return matches
 
-#Task 7: Sort the Rows by last_name Using a Lambda
+# Task 7: Sort the Rows by last_name Using a Lambda
 def sort_by_last_name():    #We want to call the sort() method on the rows.  However, we need to tell it which column to use for the sort.
     #index of last name
     idx = column_index('last_name')
@@ -114,7 +114,7 @@ def sort_by_last_name():    #We want to call the sort() method on the rows.  How
     '''
     return employees["rows"]
 
-#Task 8: Create a dict for an Employee
+# Task 8: Create a dict for an Employee
 def employee_dict(row):
     # The keys in the dict are the column headers from employees["fields"]. Do not include employee_id
     # zip() joins two tuples. zip(fields,desired_row)
@@ -124,7 +124,7 @@ def employee_dict(row):
     emp = dict(zip(emp_keys,emp_vals)) 
     return emp
 
-#Task 9: A dict of dicts, for All Employees
+# Task 9: A dict of dicts, for All Employees
 def all_employees_dict():
     # The keys in the dict are the employee_id values from the rows in the employees dict.
     # For each key, the value is the employee dict created for that row. (Use the employee_dict function you created in task 8.)
@@ -133,4 +133,19 @@ def all_employees_dict():
         key = row[0]
         emps[key] = employee_dict(row) #use employee dict to get dictionary of employee
     return emps
-all_employees_dict()
+
+# Task 10: Use the os Module
+import os
+def get_this_value():
+    #This function takes no parameters and returns the value of the environment variable THISVALUE.
+    return os.getenv("THISVALUE")
+
+# Task 11: Creating Your Own Module
+import custom_module
+def set_that_secret(new_secret):
+    custom_module.set_secret(new_secret)
+
+set_that_secret("secretsecret")
+print(custom_module.secret)
+
+# Task 12: Read minutes1.csv and minutes2.csv
