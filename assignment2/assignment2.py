@@ -144,8 +144,77 @@ def get_this_value():
 import custom_module
 def set_that_secret(new_secret):
     custom_module.set_secret(new_secret)
-
-set_that_secret("secretsecret")
-print(custom_module.secret)
+# set_that_secret("secretsecret")
+# print(custom_module.secret)
 
 # Task 12: Read minutes1.csv and minutes2.csv
+def read_minutes(): # Function no params
+    #creates two dicts, minutes1 and minutes2
+    #minutes 1
+    minutes1 ={}
+    rows1 = []
+    minutes2 = {}
+    rows2 = []
+    # minutes 1
+    try:
+        with open("../csv/minutes1.csv",'r') as file:
+            reader = csv.reader(file)
+            for index,row in enumerate(reader):
+                if index == 0:
+                   minutes1['fields'] = row
+                else:
+                   rows1.append(tuple(row))
+            minutes1['rows'] = rows1
+            # print(minutes1)
+    except Exception as e:
+        print(e)
+    
+    # minutes 2
+    try:
+        with open("../csv/minutes2.csv",'r') as file:
+            reader = csv.reader(file)
+            for index,row in enumerate(reader):
+                if index == 0:
+                   minutes2['fields'] = row
+                else:
+                   rows2.append(tuple(row))
+            minutes2['rows'] = rows2
+            # print(minutes2)
+    except Exception as e:
+        print(e)
+    return minutes1, minutes2
+#Global Variables
+minutes1,minutes2 = read_minutes()
+
+# Task 13: Create minutes_set
+def create_minutes_set():
+    minutes_set = set(minutes1['rows']).union(set(minutes2['rows']))
+    return minutes_set 
+#Global Variable
+minutes_set = create_minutes_set()
+
+# Task 14: Convert to datetime
+"""
+{('Amanda Brown', 'August 8, 1984'), ('Lori Martin', 'February 5, 1984'), ... }
+"""
+from datetime import datetime, date
+def create_minutes_list():
+    minutes_list = list(minutes_set)
+    return list(map((lambda x: (x[0], datetime.strptime(x[1], "%B %d, %Y"))),minutes_list))
+#Global Variable
+minutes_list = create_minutes_list()
+# print(minutes_list)
+
+# Task 15: Write Out Sorted List
+def write_sorted_list():  
+    global minutes_list
+    minutes_list.sort(key=lambda row: row[1]) #sort in order of datetime
+    formatted_list = list(map((lambda x: (x[0], datetime.strftime(x[1],"%B %d, %Y"))), minutes_list))
+    try:
+        with open("./minutes.csv", 'w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerows(formatted_list)
+            return formatted_list
+    except Exception as e:
+        print(e)
+write_sorted_list()
