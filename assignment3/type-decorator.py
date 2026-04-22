@@ -19,7 +19,7 @@ def return_int():
 """ Write a function return_string() that takes no arguments and returns the string value "not a number". 
 Decorate that function with type-decorator. In the decoration, pass int as the parameter to type_decorator. Think: What's going to happen?"""
 
-@type_converter(5)
+@type_converter(int)
 def return_string():
     return "not a number"
 
@@ -30,6 +30,6 @@ print(type(y).__name__) # This should print "str"
 try:
    y = return_string()
    print("shouldn't get here!")
-except (ValueError, TypeError): #Added TypeError because that was the error I was receiving instead of ValueError
+except (ValueError):
    print("can't convert that string to an integer!") # This is what should happen
 
