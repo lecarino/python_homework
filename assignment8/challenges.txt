@@ -1,0 +1,3 @@
+The challenges i faced:
+1. It was difficult reading up on XPATH and trying to understand it. 
+2. I had a difficult time writing to CSV as shown in the CTD Learns APP 8.6, so I just did what I did for task 3 of the assingment which was to convert it to a df first then write it to csv. 

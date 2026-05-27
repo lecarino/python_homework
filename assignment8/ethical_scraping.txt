@@ -1,0 +1,11 @@
+Task 5: Ethical Web Scraping
+1. Which sections of the website are restricted for crawling?
+    - administrative, backend, dynamically generated pages
+    - /w/, /api/, /trap/
+    all of this under user agent: *
+ 
+2. Are there specific rules for certain user agents?
+    - Yes. Wikipedia has an extensive list of specific User-agents (such as UbiCrawler, WebCopier, HTTrack, and Zealbot) that are banned from the site. 
+
+3. Reflection on the purpose of robots.txt and ethical scraping:
+Websites use robots.txt to ensure the site doesn't crash and doesnt affect real users. It protects the site and makes developers adhere to ethical scraping so they only gain access to things that the website allows and they don't break the host infrastructure.
