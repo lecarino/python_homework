@@ -1,6 +1,111 @@
 '''Task 1: Review robots.txt to Ensure Policy Compliance'''
 Verify that the following steps are not in breach of policy: 
 Verified check.
+User-agent: * 
+    Disallow: /staff/
+	
+User-agent: AdsBot-Google
+Disallow: /
+
+
+User-agent: Amazonbot
+Disallow: /
+
+
+User-agent: Applebot
+Disallow: /
+
+
+User-agent: Applebot-Extended
+Disallow: /
+
+
+User-agent: anthropic-ai
+Disallow: /
+
+
+User-agent: AwarioRssBot
+Disallow: /
+
+
+User-agent: AwarioSmartBot
+Disallow: /
+
+
+User-agent: Bytespider
+Disallow: /
+
+
+User-agent: CCBot
+Disallow: /
+
+
+User-agent: ChatGPT
+Disallow: /
+
+
+User-agent: ChatGPT-User
+Disallow: /
+
+
+User-agent: ClaudeBot
+Disallow: /
+
+
+User-agent: Claude-Web
+Disallow: /
+
+
+User-agent: cohere-ai
+Disallow: /
+
+
+User-agent: DataForSeoBot
+Disallow: /
+
+
+User-agent: Diffbot
+Disallow: /
+
+
+User-agent: FacebookBot
+Disallow: /
+
+
+User-agent: Google-Extended
+Disallow: /
+
+
+User-agent: GPTBot
+Disallow: /
+
+
+User-agent: ImagesiftBot
+Disallow: /
+
+
+User-agent: magpie-crawler
+Disallow: /
+
+
+User-agent: omgili
+Disallow: /
+
+
+User-agent: Omgilibot
+Disallow: /
+
+
+User-agent: peer39_crawler
+Disallow: /
+
+
+User-agent: PerplexityBot
+Disallow: /
+
+
+User-agent: YouBot
+Disallow: /
 
 '''Task 2: Understanding HTML and the DOM for the Durham Library Site'''
 
