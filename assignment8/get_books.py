@@ -51,7 +51,7 @@ Within your program, create an empty list called results.  You are going to add 
         #DICT:
         book_dict = {
             "Title": title,
-            "Authors": authors,
+            "Author": authors,
             "Format-Year": format_year
         }
         results.append(book_dict)

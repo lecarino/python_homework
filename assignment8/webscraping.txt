@@ -1,5 +1,6 @@
 '''Task 1: Review robots.txt to Ensure Policy Compliance'''
-
+Verify that the following steps are not in breach of policy: 
+Verified check.
 
 '''Task 2: Understanding HTML and the DOM for the Durham Library Site'''
 
