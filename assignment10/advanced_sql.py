@@ -4,6 +4,7 @@ import sqlite3
 
 try:
     conn = sqlite3.connect("../db/lesson.db")
+    conn.execute("PRAGMA foreign_keys = 1")
     cursor = conn.cursor()
 
     ### --- TASK 1 START --- ###
@@ -80,6 +81,7 @@ try:
     #TRANSACTION
     try:
         #create new order:
+        conn.execute("BEGIN")
         cursor.execute("""
             INSERT INTO orders (customer_id, employee_id, date) 
             VALUES (?, ?, date('now')) 
